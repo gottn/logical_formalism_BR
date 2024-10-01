@@ -1,3 +1,4 @@
+from logic.formulas import *
 class Feature:
     def __init__(self, name, domain) -> None:
         """
@@ -17,7 +18,7 @@ class Feature:
     def __hash__(self) -> int:
         return hash(('feature', self.name))
     
-class FeatureAtom:
+class FeatureAtom(FeatureFormula):
     def __init__(self, feature, value) -> None:
         """
         Represents a feature atom (f, v)
@@ -53,7 +54,7 @@ class FeatureAtom:
     
 
 
-class ClassificationAtom:
+class ClassificationAtom(FeatureFormula):
     def __init__(self, label):
         """
         Represents a classification atom (class label).
@@ -77,7 +78,9 @@ class ClassificationAtom:
     
     def __hash__(self) -> int:
         return hash(('classification_atom', self.label))
-    
+
+
+
     
 
  
