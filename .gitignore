@@ -1,0 +1,59 @@
+# Compiled source #
+###################
+*.pyc
+__pycache__/
+*.so
+
+# Packages #
+############
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info/
+
+# Installer logs #
+##################
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports #
+###############################
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Virtual Environments #
+########################
+.env/
+.venv/
+venv/
+ENV/
+
+# Jupyter Notebook #
+####################
+.ipynb_checkpoints
+
+# MacOS #
+#########
+.DS_Store
+
+# PyCharm #
+###########
+.idea/
+
+# VSCode #
+##########
+.vscode/
