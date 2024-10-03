@@ -1,3 +1,6 @@
+from logic.features import *
+from logic.formulas import *
+
 class Formula:
     def evaluate(self, context):
         """
@@ -102,7 +105,7 @@ class ClassificationAnd(ClassificationFormula):
     def __init__(self, *operands) -> None:
         for op in operands:
             if not isinstance(op, ClassificationFormula):
-                raise TypeError("Operands must be ClassificaitonsFornulas")
+                raise TypeError("Operands must be ClassificaitonsFormulas")
         self.operands = operands
 
     def evaluate(self, classification):

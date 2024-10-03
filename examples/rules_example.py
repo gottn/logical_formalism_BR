@@ -6,6 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from logic.features import *
 from logic.formulas import *
+from logic.rules import *
 
 
 # Define features with their domains
@@ -22,9 +23,23 @@ feature_formula = FeatureOr(color_red, shape_circle)
 print(feature_formula)
 
 
-# Evaluating the formula
-data_point = {'color': 'red', 'shape': 'circle'}
+# Define all possible class labels
+class_labels = {'A', 'B', 'C'}
 
+# Create classification formulas
+class_A = ClassificationAtom('A')
+class_B = ClassificationAtom('B')
+class_C = ClassificationAtom('C')
 
+# Classification formula: ¬B
+classification_formula = ClassificationNot(class_B)
 
-print(feature_formula.evaluate(data_point))  # Output: True
+# Create a rule
+rule = Rule(feature_formula, classification_formula)
+
+# Print rule
+print(rule)
+
+# Get the head classes
+head_classes = rule.head_classes(class_labels)
+print(f"Head classes: {head_classes}")  # Output: Head classes: {'A', 'C'}

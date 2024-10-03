@@ -4,7 +4,7 @@ class Feature:
         """
         Initialize a feature with a name and a domain of possible values.
         :param name: Name of the feature
-        :param domain: A set of possible values for the feature (finite and discrete)
+        :param domain: A set of possible values for the feature (finite and discrete for now)
         """
         self.name = name
         self.domain = domain
@@ -54,7 +54,7 @@ class FeatureAtom(FeatureFormula):
     
 
 
-class ClassificationAtom(FeatureFormula):
+class ClassificationAtom(ClassificationFormula):
     def __init__(self, label):
         """
         Represents a classification atom (class label).
